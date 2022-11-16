@@ -1,0 +1,145 @@
+.todo-page {
+    width: 90%;
+    max-width: 32rem;
+    margin: 2rem auto;
+}
+
+.page-heading {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+h1 {
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--Light-Grayish-Blue-2);
+}
+
+.theme-button {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.todo-adder, .todo-item, .bottom-panel {
+    min-height: 3rem;
+    padding: .8rem;
+    display: flex;
+    align-items: center;
+    font-size: .8rem;
+}
+
+
+.todo-item:nth-of-type(1), .bottom-panel:nth-of-type(1) {
+    border-top: none;
+}
+
+.todo-item p {
+    width: 100%;
+    text-align: left;
+}
+
+.todo-adder, .todo-list, .filter-panel-small {
+    border-radius: .35rem;
+}
+
+.todo-list {
+    margin: 1rem 0;
+    overflow: hidden;
+}
+
+.todo-adder input{
+    background-color: inherit;
+    color: inherit;
+    box-shadow: none;
+    border: none;
+    font-size: .8rem;
+    width: 100%;
+}
+
+.todo-adder input:focus{
+    outline: none;
+}
+
+.remove-button {
+    height: 1rem;
+    width: 1rem;
+}
+
+.checkbox {
+    height: 1.2rem;
+    width: 1.2rem;
+    display: inline-block;
+    margin-right: .5rem;
+    border: 1px solid var(--Light-Grayish-Blue-1);
+    border-radius: 50%;
+}
+
+.completed p {
+    text-decoration: line-through;
+    opacity: .5;
+}
+
+.completed .checkbox {
+    background: var(--Check-Background);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mark {
+    display: flex;
+    align-items: center;
+    width: 90%;
+}
+
+.mark:hover, .remove-button:hover, .filter:hover {
+    cursor: pointer;
+}
+
+.remove-button {
+    margin-left: 1rem;
+}
+
+.bottom-panel {
+    justify-content: space-between;
+    font-size: .7rem;
+}
+
+.filter-panel-large, .filter-panel-small {
+    display: flex;
+    gap: .5rem;
+    font-size: .8rem;
+}
+
+.filter-panel-large {
+    display: none;
+}
+
+.filter-panel-small {
+    height: 3rem;
+    padding: .5rem;
+    gap: .8rem;
+    color: inherit;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.filter{
+    list-style-type: none;
+    text-transform: capitalize;
+}
+
+
+@media screen and (min-width: 600px) {
+    
+    .filter-panel-small {
+        display: none;
+    }
+
+    .filter-panel-large {
+        display: flex;
+    }
+}
