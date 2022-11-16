@@ -30,9 +30,9 @@ function TodoItem({ details, remove, markComplete }) {
     );
 }
 
-function FilterItem({ label, handleFilter }) {
+function FilterItem({ label, handleFilter, currFilters }) {
     return (
-        <li className="filter" onClick={() => handleFilter(label)}>{label}</li>
+        <li className={currFilters === label ? "filter selected" : "filter"} onClick={() => handleFilter(label)}>{label}</li>
     );
 }
 
@@ -51,8 +51,6 @@ export default function TodoPage({handleTheme, currTheme}) {
         }else {
             setTodoItems([]);
         }
-
-        console.log(filterItems);
     }, []);
 
     useEffect(() => {
@@ -148,13 +146,13 @@ export default function TodoPage({handleTheme, currTheme}) {
                 <div className="bottom-panel">
                     <span className="items-left">{itemsLeft} items left</span>
                     <ul className="filter-panel-large">
-                        {['all', 'active', 'completed'].map(filter => <FilterItem label={filter} key={filter} handleFilter={setFilters} />)}
+                        {['all', 'active', 'completed'].map(filter => <FilterItem label={filter} key={filter} handleFilter={setFilters} currFilters={filters} />)}
                     </ul>
                     <span className="clear-completed" onClick={() => clearCompleted()}>Clear completed</span>
                 </div>
             </div>
             <ul className="filter-panel-small">
-                {['all', 'active', 'completed'].map(filter => <FilterItem label={filter} key={filter} handleFilter={setFilters} />)}
+                {['all', 'active', 'completed'].map(filter => <FilterItem label={filter} key={filter} handleFilter={setFilters} currFilters={filters} />)}
             </ul>
         </div>
     );
