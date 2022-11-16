@@ -46,7 +46,7 @@ export default function TodoPage({handleTheme, currTheme}) {
     useEffect(() => {
         let savedArr = JSON.parse(localStorage.getItem('todoList'));
 
-        if(savedArr.length) {
+        if(savedArr) {
             setTodoItems(savedArr);
         }else {
             setTodoItems([]);
