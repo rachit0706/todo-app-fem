@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { v4 as uuid } from 'uuid';
 import "./TodoPage.css";
 
 function TodoAdder({ addItem }) {
@@ -35,7 +36,6 @@ function FilterItem({ label, handleFilter }) {
     );
 }
 
-let todoId = 0;
 export default function TodoPage({handleTheme, currTheme}) {
     
     const [todoItems, setTodoItems] = useState([]);
@@ -70,7 +70,7 @@ export default function TodoPage({handleTheme, currTheme}) {
     const addTodo = (text) => {
         setTodoItems(prevItems => {
             const newItem = {
-                id: todoId++,
+                id: uuid(),
                 text: text,
                 completed: false
             }
