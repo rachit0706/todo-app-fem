@@ -68,6 +68,11 @@ export default function TodoPage({handleTheme, currTheme}) {
     }, [filters]);
 
     const addTodo = (text) => {
+        if(text === ''){
+            alert("Todo item cannot be empty!");
+            return;
+        }
+
         setTodoItems(prevItems => {
             const newItem = {
                 id: uuid(),
