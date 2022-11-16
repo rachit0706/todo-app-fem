@@ -94,7 +94,7 @@ h1 {
     width: 90%;
 }
 
-.mark:hover, .remove-button:hover, .filter:hover {
+.mark:hover, .remove-button:hover, .filter:hover, .theme-button:hover, .clear-completed:hover {
     cursor: pointer;
 }
 
